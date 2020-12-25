@@ -1,0 +1,286 @@
+/* .App {
+  text-align: center;
+} */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#root{
+  background: #DCDCDC;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pointer{
+  cursor: pointer
+}
+
+button{
+  cursor: pointer;
+}
+.f {
+  display: flex;
+  /* align-items: center; */
+  /* padding: 6px; */
+}
+.l{
+  list-style: none;
+}
+.fw{
+  flex-wrap: wrap;
+}
+.card_name{
+  box-sizing: content-box;
+}
+.even{
+  justify-content: space-evenly;
+}
+
+header {
+  display: flex;
+  background-color:#C2FFCA;
+  border-radius: 29px;
+  /* border: 2px solid red; */
+}
+
+.l-icon{
+  width: 37px;
+  height: 39px;
+  padding: 10px;
+}
+.sm-icon{
+  width: 23px;
+  height: 32px;
+  padding: 10px;
+}
+
+
+.developer_card {
+  height: 38vh;
+  background: #FAEBD7;
+  /* border: 2px solid orangered; */
+  width: 19vw;
+  box-shadow: 2px 3px 14px 2px royalblue;
+  margin: 19px;
+}
+.recommended_developer{
+  border-radius: 6px;
+   background-color:#C2FFCA; 
+  /* border: 2px solid; */
+  padding: 2px;
+  margin: 4%;
+  
+}
+.developer_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.chat{
+max-height: 79vh;
+}
+.center-bttn{
+  display: flex;
+  justify-content: center;
+}
+.header-1half {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-2half {
+  display: flex;
+  justify-content: flex-end;
+  width: 57%;
+}
+.article_list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 3%;
+  background:  #AEBCAF;
+  border-radius: 6px;
+  /* border: 2px solid; */
+}
+
+.article{
+  margin: 6%;
+  background: #FAEBD7;
+  border-radius: 8px;
+  box-shadow: 2px 3px 14px 2px royalblue;
+  cursor: pointer
+}
+
+.content{
+  /* border: 2px solid ; */
+  /* overflow: auto; */
+  /* max-height: 76vh; */
+  margin: 2% ;
+}
+.home{
+  max-height: 76vh;
+  overflow: auto;
+}
+
+.chatPage{
+  flex-grow: 6;
+  flex-basis: 60%;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #C2FFCA;
+}
+.userlist{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
+  background: antiquewhite;
+  overflow: auto;
+ 
+  /* height: 86vh; */
+  /* width: 40vw; */
+}
+.chatcontent{
+  flex: 10;
+  overflow: auto;
+}
+.userCard{
+  display: flex;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.typing{
+  flex: 2;
+}
+.left {
+  background-color: #fff685;
+  align-self: flex-start;
+}
+.right{
+  background-color:#00DDFF;
+  align-self: flex-end;
+}
+.message{
+  padding: 10px;
+}
+
+.chating{
+display: flex;
+flex-direction: column;
+}
+
+.login_box{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30vh;
+    min-height: 35vh;
+    padding: 46px;
+    /* margin: 0px; */
+    background: #ffff;
+}
+
+.login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+
+.chip{
+  display: flex;
+  border: 2px solid;
+  width: fit-content;
+  border-radius: 20px;
+  height: 42px;
+  margin: 3px;
+}
+
+.chip_icon{
+  width: 32px;
+  height: 40px;
+  border-radius: 33px;
+}
+
+.skillset{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.g_bc{
+  background: #C2FFCA;
+}
+.submit_button{
+display: flex;
+justify-content: center;
+
+}
+
+.question_section{
+  border: 2px solid;
+  margin: 4px;
+  background: antiquewhite;
+}
+
+.acknowledgement{
+  background-color: #C2FFCA;
+}
+
+.topSkills{
+  flex: 1;
+}
+
+.askContent{
+  flex: 3;
+}
+.ads_section{
+  flex: 1;
+}
