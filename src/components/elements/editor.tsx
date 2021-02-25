@@ -23,7 +23,7 @@ function MyEditor(props:props) {
     setEditorState(EditorState.createWithContent(raw))
 
    }
-  },[0])
+  })
   useEffect(()=>{
     console.log("kooooss")
 // localStorage.setItem('content',JSON.stringify(convertToRaw(editorState.getCurrentContent())))

@@ -1,5 +1,5 @@
 import React ,{useState, useEffect} from 'react'
-import {Redirect,RouteComponentProps} from 'react-router-dom'
+import {RouteComponentProps} from 'react-router-dom'
 
 import SkillComponent from '../elements/clip'
  type skill ={
@@ -14,7 +14,6 @@ const Register = (props:RouteComponentProps)=>{
         {id:5,name:"Mongodb",selected:0},{id:6,name:"Mysql",selected:0},
      {id:7,name:"Html",selected:0},{id:8,name:"css",selected:0},
      {id:9,name:"Javascript",selected:0}])
-let [slectedSkill,changeSelected] = useState([])
      let [filteredSkills ,filterSkils]= useState([{id:1,selected:0,name:"jkfshjk"}])
    
         useEffect(()=>{

@@ -1,6 +1,6 @@
 import React from 'react'
 import Acknowledge from './acknowledge'
-import {Editor,EditorState,convertFromRaw,ContentState} from 'draft-js';
+import {Editor,EditorState,convertFromRaw} from 'draft-js';
 
 interface props  {
 id:number;

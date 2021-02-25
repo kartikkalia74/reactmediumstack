@@ -15,7 +15,7 @@ const chatpage = function (props:any){
             <>
             <div className="chating">
                 {messageList.map((each,i)=>
-                    <p className={`message ${i%2==0?'left':'right'}`}>{each}</p>
+                    <p className={`message ${i%2===0?'left':'right'}`}>{each}</p>
                 )}
                 
             </div>

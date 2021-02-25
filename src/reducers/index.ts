@@ -1,6 +1,6 @@
 
 
-import {  Store as ReduxStore,compose, Action,combineReducers,createStore } from 'redux';
+import { combineReducers,createStore } from 'redux';
 import  {article}  from '../reducers/article'
 import  {Question}  from '../reducers/question'
 
@@ -27,7 +27,7 @@ declare global {
     }
   }
 export type RootAction = {}
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//     : compose;
 export const Store = createStore(reducers,{})

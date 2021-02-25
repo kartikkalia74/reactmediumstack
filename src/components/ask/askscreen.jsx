@@ -6,7 +6,6 @@ import QuestionSection from '../elements/questionSection';
 
 
 const Askscreen = (props) => {
-    let question = [1,2,3,4,5,6,7,78,]
     console.log(props)
     const movetoQuestionScreen = ()=>{
         props.history.replace(props.location.pathname+"/new")
