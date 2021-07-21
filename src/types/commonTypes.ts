@@ -1,6 +1,6 @@
 export   interface  skill {
-    id:number;
+    id:string;
     name:string;
+    icon?:string;
     selected:number;
 }
-

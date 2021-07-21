@@ -76,6 +76,7 @@ header {
   width: 37px;
   height: 39px;
   padding: 10px;
+  border-radius: 21px;
 }
 .sm-icon{
   width: 23px;
@@ -215,7 +216,7 @@ flex-direction: column;
 
 .login{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;

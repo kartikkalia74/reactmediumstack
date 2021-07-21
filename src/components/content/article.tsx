@@ -11,7 +11,7 @@ type props = {
 const Article = (props:props)=>{
 
 let date =  new Date()
-const editorState = EditorState.createWithContent(convertFromRaw(props.content.content))
+const editorState = EditorState.createWithContent(convertFromRaw(JSON.parse(props.content.content)))
 
 console.log(date,typeof date)
     return (

@@ -1,6 +1,6 @@
 import React ,{useState, useEffect} from 'react'
 
-const Chip  = (props:{skill:{name:string,id:number,selected:number}})=>{
+const Chip  = (props:{skill:{name:string,id:string,selected:number}})=>{
 
 let [chipstyle,changeChipstyle] = useState(['chip'])
 

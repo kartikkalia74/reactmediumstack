@@ -3,12 +3,13 @@ import SkillComponent from './clip'
 import {skill} from '../../types/commonTypes'
 
 const Skill = (props:any) => {
-    let [skills,changeSkills] =  useState([
-        {id:1,name:"Node",selected:0},{id:2,name:"React",selected:0},
-        {id:3,name:"Angular",selected:0},{id:4,name:"Deno",selected:0},
-        {id:5,name:"Mongodb",selected:0},{id:6,name:"Mysql",selected:0},
-     {id:7,name:"Html",selected:0},{id:8,name:"css",selected:0},
-     {id:9,name:"Javascript",selected:0}])
+    // {id:1,name:"Node",selected:0},{id:2,name:"React",selected:0},
+    //     {id:3,name:"Angular",selected:0},{id:4,name:"Deno",selected:0},
+    //     {id:5,name:"Mongodb",selected:0},{id:6,name:"Mysql",selected:0},
+    //  {id:7,name:"Html",selected:0},{id:8,name:"css",selected:0},
+    //  {id:9,name:"Javascript",selected:0}
+    let [skills,changeSkills] =  useState<skill[]>([
+        ])
      let [skillText, changeText ] = useState('')
 
      const filterSkills = () => {

@@ -1,17 +1,31 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-
-const TopSkills  = () => {
-   let skills = [
-        {id:1,name:"Node",selected:0},{id:2,name:"React",selected:0},
-        {id:3,name:"Angular",selected:0},{id:4,name:"Deno",selected:0},
-        {id:5,name:"Mongodb",selected:0},{id:6,name:"Mysql",selected:0},
-     {id:7,name:"Html",selected:0},{id:8,name:"css",selected:0},
-     {id:9,name:"Javascript",selected:0}]
+import React ,{useEffect}from 'react'
+import {Link,RouteComponentProps} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Dispatch as dispatch} from 'redux'
+import {reducerType} from '../../reducers'
+import {typeState} from '../../reducers/skills';
+import {privateApi,publicApi} from '../../services/api'
+import {Add} from '../../actions/skill'
+import {skill} from '../../types/commonTypes'
+type StateProps = {skill:typeState[]}
+ type Dispatch = {
+    Add:(skill:typeState[]) =>void;
+ } 
+ type Props = Dispatch & RouteComponentProps  & StateProps;
+const TopSkills  = (props:Props) => {
+    useEffect(()=>{
+        const  getSkill =async () =>{
+            const result:{data:typeState[]} = await privateApi.SkillList()
+            console.log(result)
+            props.Add(result.data)
+            }
+            getSkill()
+    },[])
+   let skills = []
 return (
 <div className="topSkills">
 
-    {skills.map((each,i)=><li key={i}> <Link to={"/"+each.name}>{each.name}</Link> </li>)}
+    {props.skill.map((each,i)=><li key={i}> <Link to={"/home/skill/"+each.name}>{each.name}</Link> </li>)}
 
 
 </div>
@@ -19,5 +33,12 @@ return (
 
 }
 
+const mapStateToProps = (state: reducerType) =>{
+    console.log(state)
+    return {skill:state.skill}
+}
+const mapDispatchToProps = (dispatch:dispatch) =>{
+    return {Add:(payload:typeState[]) => dispatch(Add(payload))}
+}
 
-export default TopSkills;
+export default connect(mapStateToProps,mapDispatchToProps)(TopSkills);

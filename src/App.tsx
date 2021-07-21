@@ -2,27 +2,43 @@ import React from 'react';
 import './index.css'
 import './App.css'
 import {BrowserRouter,Route,Redirect} from  'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 import {Provider} from 'react-redux'
 import {Store} from './reducers/index'
 import Login from './components/login/login'
 import Register from './components/register/register'
 import PublicRoutes from './routes/public.routes'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
+
+  const id = localStorage.getItem('user')
+  console.log(id,"iddd")
   return (
     <Provider store={Store}>
 <div className="App">
      
      {/* <Content/> */}
      <BrowserRouter >
+     { !id && <Redirect to="/login" />}
+    
      <Route exact path="/">
+    
+  
+
    <Redirect to="/home" />
 </Route>
-     <Route path='/signup' exact component={Register}/>
+<ToastContainer
+ containerId="an id"
+ draggable={false}
+/>
+<Route path='/signup' exact component={Register}/>
      <Route path='/login' exact component={Login}/>
      <Route path="/home" component={PublicRoutes}/>
-    
+
+     
+     
      </BrowserRouter>
    </div>
     </Provider>

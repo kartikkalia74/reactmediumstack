@@ -15,11 +15,11 @@ export type Action = {
     type:string,
     payload:typeState
 }
-
-export const  article = (intiliseState:typeState[]=[],action:Action) => {
+export const initialState:typeState[] = []
+export const  article = (intiliseState=initialState,action:Action) => {
     switch(action.type){
         case ActionTypes.acticle.ADD : return [...intiliseState,{...action.payload,id:intiliseState.length }];
-        case ActionTypes.acticle.REMOVE : return intiliseState.filter((each)=>each.id === action.payload.id);
+        case ActionTypes.acticle.REMOVE : return intiliseState.filter((each: { id: number; })=>each.id === action.payload.id);
         // case  ActionTypes.acticle.LIKE: return   
         default: return intiliseState;
     }

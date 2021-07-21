@@ -1,8 +1,9 @@
 
 
 import { combineReducers,createStore } from 'redux';
-import  {article}  from '../reducers/article'
-import  {Question}  from '../reducers/question'
+import  {article, initialState as articalState}  from '../reducers/article'
+import  {Question, initialState as questionState}  from '../reducers/question'
+import {Skill as skill ,initialState as skillState} from '../reducers/skills'
 
 
 
@@ -12,7 +13,11 @@ import  {Question}  from '../reducers/question'
 //         default:return initialstate;
 //     }
 // }
-const reducers = combineReducers({article,question:Question})
+export type reducerType = {
+  article:typeof articalState,skill:typeof skillState,question:typeof questionState
+} 
+export const reducerCombineObj ={article,skill,question:Question}
+const reducers = combineReducers(reducerCombineObj)
 declare global {
     interface Window {
       __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (
@@ -30,4 +35,4 @@ export type RootAction = {}
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 //     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 //     : compose;
-export const Store = createStore(reducers,{})
+export const Store  = createStore(reducers,{})

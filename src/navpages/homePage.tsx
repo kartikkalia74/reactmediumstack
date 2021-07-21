@@ -12,6 +12,7 @@ const home_page = function(){
     return (
         <div className="home">
             <Route  exact path = '/home/'  component={Recomended_developer} />
+            {/* <Route  exact path = '/home/'  component={Recomended_developer} /> */}
            <Route exact path='/home/'  component={Article_list}/>
             <Route path="/home/article/add"  component={AddArticle}/>
         </div>

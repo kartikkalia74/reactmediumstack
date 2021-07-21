@@ -19,7 +19,8 @@ export type Action = {
     type:string,
     payload:typeState
 }
-export const  Question = (intiliseState:typeState[]=[],action:Action) => {
+export const initialState:typeState[] =[]
+export const  Question = (intiliseState=initialState,action:Action) => {
 
     switch(action.type){
         case ActionTypes.question.ADD : return [...intiliseState,action.payload];
