@@ -13,7 +13,7 @@ const Recomended_developer = function (){
           const userDetail = JSON.parse(localStorage.getItem('user')||'{}')
           const user=  await privateApi.Userlist({userId:userDetail._id}) 
           console.log(user.data)
-          changeDeveloperList(user.data)    
+          changeDeveloperList(user.data.suggestPeople)    
         }catch(err){
           console.log(err);
         }
