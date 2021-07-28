@@ -1,6 +1,7 @@
 
 import Userlist from '../../components/chat/userlist';
-import {instance} from './index'
+import {instance} from './index';
+
 
 
 export default  {
@@ -38,6 +39,7 @@ export default  {
         }
     },
 
+    //request send
     sendFollowRequest :async (data:any)=>{
         try{
             const result= await instance.post('private/follow',data);
@@ -49,6 +51,22 @@ export default  {
     respondToFollowRequest: async (data:any) =>{
         try{
             const result= await instance.patch('private/follow',data);
+            return result['data'];
+        }catch(err){
+            throw err;
+        }
+    },
+    addquestion :async (data:any)=>{
+        try{
+            const result= await instance.post('private/question',data);
+            return result['data'];
+        }catch(err){
+            throw err;
+        }
+    },
+    listquestion :async (data:any)=>{
+        try{
+            const result= await instance.get('private/question');
             return result['data'];
         }catch(err){
             throw err;

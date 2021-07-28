@@ -15,18 +15,15 @@ function App() {
 
   const id = localStorage.getItem('user')
   console.log(id,"iddd")
+  //  if(!localStorage.getItem('user')) && <Redirect to="/login" />}
   return (
     <Provider store={Store}>
 <div className="App">
-     
+   
      {/* <Content/> */}
      <BrowserRouter >
-     { !id && <Redirect to="/login" />}
-    
-     <Route exact path="/">
-    
   
-
+     <Route exact path="/">
    <Redirect to="/home" />
 </Route>
 <ToastContainer

@@ -8,6 +8,8 @@ import {typeState} from '../../reducers/question'
 import {Dispatch} from 'redux'
 import {Add} from '../../actions/question'
 import { RouteComponentProps } from 'react-router-dom';
+import {privateApi,publicApi,baseUrl} from '../../services/api'
+
 type props ={
     Add(typeState:typeState):void;
 } & RouteComponentProps;
@@ -23,14 +25,32 @@ const QuestionForm = (props:props) => {
             AddOrRemoveSkill([...slectedSkills,currentskill]);
         }
     }
-    const handleSubmit = () =>{
-        console.log(title,content,title.current?.value);
-        if(title.current){
-            console.log(title.current.value);
-            // title.current.focus()
+    const addQuestion = async (data:any) =>{
+        try{
+           const result = await privateApi.addquestion(data);
+           return result['data'];
+        }catch(err){
+            throw err;
         }
-        props.Add({id:'1',question:title.current?.value||'',content:convertToRaw(content.getCurrentContent()),skills:slectedSkills.map((each)=>each.name)})
-        props.history.push('/home/ask');
+    }
+    const handleSubmit = async () =>{
+        try {
+            debugger;
+            console.log(title,content,title.current?.value);
+            if(title.current){
+                console.log(title.current.value);
+                // title.current.focus()
+            }
+            const user  = JSON.parse(localStorage.getItem('user')||'{}')
+
+          const result =  await addQuestion({id:'1',title:title.current?.value||'',content:JSON.stringify(convertToRaw(content.getCurrentContent())),postedBy:user._id,skills:slectedSkills.map((each)=>each.name)});  
+          console.log(result);
+          // props.Add()
+            props.history.push('/home/ask');
+        }catch(err){
+            console.log(err)
+        }
+       
     }
     return (
         <div className="questionform">

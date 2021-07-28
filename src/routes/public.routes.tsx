@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react'
-import {Route} from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
 import Header from '../components/headers/header'
 import Navbar from '../components/navbar/navbar'
 import chat_Page from '../navpages/chatPage'
@@ -20,6 +20,9 @@ interface state {
 render(){
     console.log(this.props)
     let {path}=this.props.match
+    if(!localStorage.getItem('user')){
+        return <Redirect to="/login" />
+    }
     return (
         <React.Fragment>
         
