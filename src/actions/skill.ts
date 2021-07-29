@@ -9,3 +9,7 @@ export const Add= (payload:typeState[]) =>{
     }
 
 }
+
+export const getSkills  = () =>{
+    
+}

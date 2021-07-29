@@ -14,12 +14,13 @@ import {privateApi,publicApi,baseUrl} from '../../services/api'
 
 type props ={
     Add(typeState:typeState):void;
+    skill: skill[]
 
 } & RouteComponentProps;
 
 const ArticleForm = (props:props) => {    
     const title = createRef<HTMLInputElement>();
-    const [slectedSkills,AddOrRemoveSkill] = useState<skill[]>([])
+    const [slectedSkills,AddOrRemoveSkill] = useState<skill[]>(props.skill)
     const [content , changeContent] = useState<EditorState>(EditorState.createEmpty())
     const SelectedFunc = (currentskill:skill) => {
         if(slectedSkills.find((each)=> each.id ===currentskill.id)){

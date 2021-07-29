@@ -9,11 +9,12 @@ export type Action = {
     payload:typeState[]
 }
 export const initialState:typeState[] =[] 
-export const  Skill = (intiliseState=initialState,action:Action) => {
+export const  Skill = (initialstate=initialState,action:Action) => {
     switch(action.type){
         case ActionTypes.skill.ADDSKILLLIST : return [...action.payload ];
+        // case ActionTypes.skill.GETSKILL :return []
         // case ActionTypes.acticle.REMOVE : return intiliseState.filter((each)=>each.id === action.payload.id);
         // case  ActionTypes.acticle.LIKE: return   
-        default: return intiliseState;
+        default: return initialstate;
     }
 }
